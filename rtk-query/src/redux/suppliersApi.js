@@ -25,14 +25,10 @@ export const SuppliersApi = createApi({
             })
         }),
         updateSupplier: builder.mutation({
-            query: (id, updateSupplier) => ({
-                method: "PATCH",
+            query: ({id, ...updateSupplier}) => ({
+                method: "PUT",
                 body: updateSupplier,
-                url: `suppliers/${id}`,
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
+                url: `suppliers/${id}`
             })
         })
     }),

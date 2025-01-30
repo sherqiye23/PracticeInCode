@@ -38,10 +38,9 @@ function App() {
   async function handleEdit(e) {
     e.preventDefault();
     let editSupplier = {
-      id: editid,
       companyName: editName
     }
-    await updateSupplier(editid, editSupplier)
+    await updateSupplier({id:editid, editSupplier})
     refetch()
     setDisplay("none")
   }
